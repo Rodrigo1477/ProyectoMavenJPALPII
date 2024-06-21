@@ -2,6 +2,8 @@ package Test;
 
 
 
+import java.util.List;
+
 import Dao.TblClienteImp;
 import model.TblCliente;
 
@@ -15,7 +17,7 @@ public class TestCliente {
 		
 		//Asignamos datos
 		
-		cliente.setNombre("Carla");
+	/*	cliente.setNombre("Carla");
 		cliente.setApellido("Mona Simba");
 		cliente.setDni("1445545");
 		cliente.setEmail("Carla@gmail.com");
@@ -24,7 +26,7 @@ public class TestCliente {
 		cliente.setNacionalidad("Boliviana");
 		
 		//Invocamos el metodo registrar datos en BD
-		crud.RegistrarCliente(cliente);
+		crud.RegistrarCliente(cliente); */
 		
 		
 		//*********************Testeamos el  actualizar
@@ -66,9 +68,9 @@ public class TestCliente {
 		
 		//Testeamos el metodo listado de clientes registrados en la base de datos
 		
-//		List<TblCliente> listado=crud.ListarCliente();
+		List<TblCliente> listado=crud.ListarCliente();
 		
-	/*	for(TblCliente lis:listado) {
+		for(TblCliente lis:listado) {
 			//imprimimos en pantalla los datos recuperados
 			System.out.println("codigo" + lis.getIdcliente() + " nombre "+lis.getNombre() + 
 					" apellido: " +lis.getApellido() + 
@@ -77,7 +79,7 @@ public class TestCliente {
 					" telf: " + lis.getTelf() +
 					" sexo: " + lis.getSexo() + 
 					" nacionalidad: " + lis.getNacionalidad());
-		}*/
+		}
 		
 		
 		

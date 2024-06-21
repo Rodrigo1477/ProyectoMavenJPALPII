@@ -112,26 +112,26 @@ public class TblClienteImp implements ICliente{
 	public List<TblCliente> ListarCliente() {
 	// Establecemos la conexion con la unidad de persitencia
 		
-	EntityManagerFactory em=Persistence.createEntityManagerFactory("ProyectoMavenJPALPII");
+	EntityManagerFactory fab=Persistence.createEntityManagerFactory("ProyectoMavenJPALPII");
 	
 	//Gestionar las Entidades
 	
-	EntityManager emanager=em.createEntityManager();
+	EntityManager em=fab.createEntityManager();
 	
 	//Iniciamos la transacción
 	
-	emanager.getTransaction().begin();
+	em.getTransaction().begin();
 	
 	//Recuperamos los clientes
 	//Create createquery sirve para la creacion de consultas dinamicas
 	
-	List<TblCliente> listadoclientes=emanager.createQuery("select c from TblCliente c", TblCliente.class).getResultList();
+	List<TblCliente> listado=em.createQuery("select c from TblCliente c", TblCliente.class).getResultList();
 	//Confirmamos
-	emanager.getTransaction().commit();
+	em.getTransaction().commit();
 		
 	//cerrramos
-	emanager.close();
-		return listadoclientes;
+	em.close();
+		return listado;
 	}
 	
 	
